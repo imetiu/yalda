@@ -1,0 +1,34 @@
+ADDR=$(celestia-appd keys show $CELESTIA_WALLET -a) 
+echo $CELESTIA_ADDR 
+echo 'export CELESTIA_ADDR='${CELESTIA_ADDR} >> $HOME/.bash_prof
+
+------------------------------------------------
+CELESTIA_VALOPER=$(celestia-appd keys show $CELESTIA_WALLET --bech val -a) 
+echo $CELESTIA_VALOPER 
+echo 'export CELESTIA_VALOPER='${CELESTIA_VALOPER} >> $HOME/.bash_profile 
+source $HOME/.bash_profile
+systemctl enable celestia-appd
+sudo systemctl daemon-reload
+sudo systemctl restart celestia-appd && journalctl -u celestia-appd -f -o cat
+
+------------------------------------------------------------
+Press CTRL+C to stop the logs
+
+-------------------------------------------------------------
+
+sudo systemctl stop celestia-appd
+
+--------------------------------------------------------------
+
+cd $HOME
+rm -rf ~/.celestia-app/data
+mkdir -p ~/.celestia-app/data
+SNAP_NAME=$(curl 
+--------------------------------------------
+با لینک https://discord.gg/celestiacommunity وارد دیسکورد پروژه بشید و به بخش mamaki faucet  برید و به شکل زیر ادرس خودتون رو وارد کنید و درخواست فاست شبکه رو بدید
+$request celestia1a35035fu83jkeeqz00d3jmt3k5wu5x3lyvn6qp
+
+------------------------------------- 
+با کد زیر هم میتونید موجودی ولت خودتون رو ببنید  که به جای ایکس ها ادرس خودتون رو وارد کنید 
+
+celestia-
